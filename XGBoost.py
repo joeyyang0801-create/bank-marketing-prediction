@@ -428,3 +428,11 @@ if __name__ == "__main__":
     
     # 9.PR 曲线深度对比
     # project.compare_with_lr(X_train, X_test, y_train, y_test)
+
+    # ... 原有的最后几行 ...
+    project.explain_model(X_test) 
+    
+    # === 在这里加上这两行 ===
+    import joblib
+    joblib.dump(project, 'trained_model.pkl') # 保存整个训练好的项目对象
+    print("✅ 模型已保存为 trained_model.pkl")
